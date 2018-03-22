@@ -1,5 +1,5 @@
 resource "aws_instance" "appServer" {
-  ami = "ami-00a3dd6f"
+  ami = "${var.amiId}"
   instance_type = "t2.micro"
 #  user_data = "${template_file.app_init.rendered}"
   security_groups = ["${aws_security_group.test_sg.name}"]
@@ -26,14 +26,14 @@ connection {
   }
   provisioner "remote-exec" {
     inline = [
-       "yum -y upgrade kernel",
+      "yum -y upgrade kernel",
       "yum -y install docker-io",
       "chkconfig docker on",
       "mkdir -p /home/docker",
       ]
   }
   provisioner "file" {
-    source = "/home/javaapp/hello/jdk-8u161-linux-x64.rpm"
+    source = "${var.jdkrpm}"
     destination  = "/home/docker/jdk-8u161-linux-x64.rpm"
   }
   provisioner "file"  {
@@ -53,6 +53,3 @@ connection {
      template = "${file("files/userdata.sh")}"
 }*/
 
-output "addresses" {
-  value = ["${aws_instance.appServer.public_ip}"]
-}
