@@ -26,3 +26,11 @@ variable "git" {
 variable "creds" {
   description = "Location of the AWS key and secret"
 }
+
+variable "amiId" {
+  description = "id of ami"
+}
+
+variable "count" {
+  description = "Number of instances"
+}
