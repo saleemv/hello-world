@@ -6,3 +6,5 @@ az="ap-south-1"
 jdk="/home/javaapp/hello/jdk-8u161-linux-x64.rpm"
 git="/home/terraform/git/hello-world/Docker/"
 privKey="/root/.ssh/jiffletest.pem"
+amiId="ami-00a3dd6f"
+count=1
