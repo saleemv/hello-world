@@ -11,11 +11,7 @@ variable "vpc_cidr"  {
   description = "CIDR block for vpc subnet"
 }
 
-variable "az" {
-  description = "Availability Zone"
-}
-
-variable "jdk" {
+variable "jdkrpm" {
   description = "Location of java 8 jdk"
 }
 
