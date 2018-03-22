@@ -1,0 +1,8 @@
+region = "ap-south-1"
+creds="/home/terraform/.aws/credentials"
+vpc_name = "jiffletest"
+vpc_cidr = "172.16.0.0/24"
+az="ap-south-1"
+jdk="/home/javaapp/hello/jdk-8u161-linux-x64.rpm"
+git="/home/terraform/git/hello-world/Docker/"
+privKey="/root/.ssh/jiffletest.pem"
