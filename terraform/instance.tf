@@ -1,10 +1,10 @@
 resource "aws_instance" "appServer" {
+  count = "${var.count}"
   ami = "${var.amiId}"
   instance_type = "t2.micro"
 #  user_data = "${template_file.app_init.rendered}"
   security_groups = ["${aws_security_group.test_sg.name}"]
   key_name = "${aws_key_pair.admin_key.key_name}"
-
   root_block_device {
     volume_type = "gp2"
     volume_size = "8"
