@@ -20,7 +20,7 @@ connection {
     agent = "false"
     type = "ssh"
     user = "root"
-    private_key = "${file("${var.privKey")}"
+    private_key = "${file("${var.privKey}")}"
  }
   provisioner "file" {
     source = "files/epel.repo"
