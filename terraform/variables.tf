@@ -29,4 +29,10 @@ variable "amiId" {
 
 variable "count" {
   description = "Number of instances"
+  default = 1
+}
+
+variable "instanceType" {
+  description = "EC2 instance type"
+  default = "t2.micro"
 }
