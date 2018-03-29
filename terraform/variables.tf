@@ -36,3 +36,7 @@ variable "instanceType" {
   description = "EC2 instance type"
   default = "t2.micro"
 }
+
+variable "privKey" {
+  description = "Location of private key to access aws instance"
+}  
